@@ -1,29 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Flyout1.ViewModels"
              x:Class="Flyout1.Views.FlyoutPage"
-             xmlns:views="clr-namespace:Flyout1.Views"
-             xmlns:res="clr-namespace:Flyout1.Resources"
              Padding="0,40,0,0"
              IconImageSource="Icons/hamburger_light.png"
-             xmlns:vm="clr-namespace:Flyout1.ViewModels"
              Title="Menu">
+    
     <ContentPage.BindingContext>
         <vm:FlyoutPageViewModel/>
     </ContentPage.BindingContext>
+    
     <ContentPage.Content>
         <StackLayout BackgroundColor="Transparent">
-            <ListView x:Name="listView" x:FieldModifier="public" BackgroundColor="Gray" SeparatorVisibility="None">
-                <ListView.ItemsSource>
-                    <x:Array Type="{x:Type res:FlyoutPageItem}">
-                        <res:FlyoutPageItem Title="{Binding MyTestString}" IconSource="Icons/door_light.png" TargetType="{x:Type views:DoorPage}" />
-                        <res:FlyoutPageItem Title="company" IconSource="Icons/company_light.png" TargetType="{x:Type views:AboutPage}" />
-                        <res:FlyoutPageItem Title="contacts" IconSource="Icons/contacts_light.png" TargetType="{x:Type views:ContactsPage}" />
-                    </x:Array>
-                </ListView.ItemsSource>
+            <ListView x:Name="listView" x:FieldModifier="public" BackgroundColor="Gray" SeparatorVisibility="None" ItemsSource="{Binding flyoutPageItems}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <ViewCell>
+                        <ViewCell >
                             <Grid Padding="5,10" BackgroundColor="Black">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="75"/>
