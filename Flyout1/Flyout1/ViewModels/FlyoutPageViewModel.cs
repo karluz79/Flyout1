@@ -13,9 +13,9 @@ namespace Flyout1.ViewModels
 
         }
 
-        private string teste1 = "Coisa 1";
-        private string teste2 = "Coisa 2";
-        private string teste3 = "Coisa 3";
+        private string teste1 = "String 1";
+        private string teste2 = "String 2";
+        private string teste3 = "String 3";
 
         public List<FlyoutPageItem> flyoutPageItems
         {

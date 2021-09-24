@@ -6,6 +6,7 @@ namespace Flyout1.Resources
 {
     public class FlyoutPageItem : INotifyPropertyChanged
     {
+
         public string Title
         {
             get; set;
